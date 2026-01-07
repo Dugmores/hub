@@ -2,7 +2,7 @@
 
 using System;
 using System.ComponentModel;
-using Microsoft.EntityFrameWorkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace stores.sport.Models;
 
