@@ -3,7 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace sport.Models;
+namespace stores.sport.Models;
 
 public class Product{
     public long? ProductId{get; set;}

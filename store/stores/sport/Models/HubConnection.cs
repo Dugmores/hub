@@ -3,9 +3,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using sport.Models
+using Microsoft.EntityFrameworkCore;
+using stores.sport.Models;
 
-namespace sport.Models;
+namespace stores.sport.Models;
 
 public class HubConnection:IHubConnection{
     private HubContext context;
@@ -14,5 +15,5 @@ public class HubConnection:IHubConnection{
         context = con;
     }
 
-    public IQueryable<Product>Products = context.Products;
+    public IQueryable<Product>Products => context.Products;
 }

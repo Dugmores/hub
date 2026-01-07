@@ -1,6 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
-using sport.Models;
+using stores.sport.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //add the connection dbcontext and connection string
-builder.Services.AddDbContext<DbContext>(opts =>
+builder.Services.AddDbContext<HubContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:HubStoreConnection"]);
 });

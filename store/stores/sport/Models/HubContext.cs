@@ -3,14 +3,14 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System;
-using sport.Models;
+using stores.sport.Models;
 
-namespace sport.Models;
+namespace stores.sport.Models;
 
-public class HubDbContext : DbContext
+public class HubContext : DbContext
 {
-    public HubDbContext(DbContextOptions<HubDbContext> options) : base(options)
+    public HubContext(DbContextOptions<HubContext> options) : base(options)
     {}
-    public DbSet<Product>Products = Set<Product>();
+    public DbSet<Product>Products => Set<Product>();
     
 }
