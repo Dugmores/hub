@@ -14,6 +14,9 @@ builder.Services.AddDbContext<DbContext>(opts =>
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:HubStoreConnection"]);
 });
 
+//add context classes and services for dependency
+builder.Services.AddScoped<IHubConnection, HubConnection>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
