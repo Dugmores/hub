@@ -1,7 +1,18 @@
+
+using Microsoft.EntityFrameworkCore;
+using sport.Models;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//add the connection dbcontext and connection string
+builder.Services.AddDbContext<DbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration["ConnectionStrings:HubStoreConnection"]);
+});
 
 var app = builder.Build();
 
