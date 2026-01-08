@@ -1,14 +1,23 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using sport.Models;
+using stores.sport.Models;
 
-namespace sport.Controllers;
+
+namespace stores.sport.Controllers;
 
 public class HomeController : Controller
 {
+    private IHubConnection repository;
+
+    public HomeController(IHubConnection repo)
+    {
+        repository = repo;
+    }
+
+
     public IActionResult Index()
     {
-        return View();
+        return View(repository.Products.ToList());
     }
 
     public IActionResult Privacy()
@@ -21,4 +30,6 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
 }

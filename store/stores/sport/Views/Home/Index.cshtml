@@ -1,8 +1,23 @@
-﻿@{
+﻿
+@model IEnumerable<stores.sport.Models.Product>
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <br /><br />
+    <p>Products</p>
+    @foreach(var product in Model ?? Enumerable.Empty<Product>())
+    {
+        <div>
+            <h3>@product.Name</h3>
+            <p>@product.Description</p>
+            <h4>@product.Price.ToString("C")</h4>
+        </div>
+    }
 </div>
