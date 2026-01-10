@@ -1,4 +1,6 @@
-namespace sport.Models;
+
+
+namespace stores.sport.Models;
 
 public class ErrorViewModel
 {
