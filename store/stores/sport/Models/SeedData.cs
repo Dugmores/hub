@@ -3,6 +3,7 @@
 using System;
 using System.ComponentModel;
 using Microsoft.EntityFrameworkCore;
+using stores.sport.Models;
 
 namespace stores.sport.Models;
 
@@ -51,7 +52,8 @@ public static class SeedData
                     Price = 34.95m
                 }
             );
-            context.SaveChanges();
+        
         }
+        context.SaveChanges();
     }
 }

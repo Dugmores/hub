@@ -18,10 +18,10 @@
 				"mssql.connections": [
 					{
 						"server": "localhost,1433",
-						"database": "HubStore",
+						"database": "HubContext",
 						"authenticationType": "SqlLogin",
 						"user": "sa",
-						"password": "P@ssw0rd",
+						"password": "P@ssWord",
 						"emptyPasswordInput": false,
 						"savePassword": false,
 						"profileName": "mssql-container"
@@ -38,12 +38,12 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
-	// "portsAttributes": {
-	//		"5001": {
-	//			"protocol": "https"
-	//		}
-	// }
+	"forwardPorts": [5000, 5001],
+	"portsAttributes": {
+		"5001": {
+			"protocol": "https"
+		}
+	},
 
 	// postCreateCommand.sh parameters: $1=SA password, $2=dacpac path, $3=sql script(s) path
 	"postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssw0rd' './bin/Debug/' './.devcontainer/mssql/'",
