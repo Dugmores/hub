@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //add the connection dbcontext and connection string
-builder.Services.AddDbContext<HubContext>(opts =>
+builder.Services.AddDbContext<stores.sport.Models.HubContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:HubStoreConnection"]);
 });
